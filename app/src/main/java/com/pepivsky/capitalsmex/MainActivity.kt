@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -59,52 +60,46 @@ fun MainScreen() {
             contentAlignment = Alignment.Center
         ) {
 
-            /*FlipCard(
-                modifier = Modifier.size(250.dp),
-                cardFace = cardFace,
-                axis = RotationAxis.AxisY,
-                onClick = {
-                    cardFace = cardFace.next
-                },
-                back = { Text(text = "Back") },
-                front = { Text(text = "Front") })*/
-
-            FlipCard(
-                cardFace = cardFace,
-                onClick = { cardFace = cardFace.next },
-                modifier = Modifier.size(250.dp)
+            Column {
+                FlipCard(
+                    cardFace = cardFace,
+                    onClick = { cardFace = cardFace.next },
+                    modifier = Modifier.size(250.dp)
                     /*.fillMaxWidth(.5f)
                     .aspectRatio(1f)*/
-                        ,
-                front = {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(Color.Red),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Text(
-                            text = "Front",
-                        )
-                    }
-                },
-                back = {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(Color.Blue),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Text(
-                            text = "Back",
-                        )
-                    }
-                },
-            )
+                    ,
+                    front = {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.Red),
+                            contentAlignment = Alignment.Center,
+                        ) {
+                            Text(
+                                text = "Front",
+                            )
+                        }
+                    },
+                    back = {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.Blue),
+                            contentAlignment = Alignment.Center,
+                        ) {
+                            Text(
+                                text = "Back",
+                            )
+                        }
+                    },
+                )
 
-            /*Button(onClick = { *//*TODO*//* }) {
-                Text(text = "Continuar")
-            }*/
+                Button(modifier = Modifier,onClick = { }) {
+                    Text(text = "Continuar")
+                }
+            }
+
+
         }
 
     }
